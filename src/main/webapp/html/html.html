@@ -1,10 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>教务系统</title>
+
+    <link rel="stylesheet" href="css/Main.css" />
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.btn').on('click',function () {
+                $('.btn').toggleClass('btnc');
+                $('.leftcontain').toggleClass('side');
+
+            })
+
+            $('.leftcontain').on('click','.outer>li>a',function(){
+                if ($(this).next().css('display') == "none") {
+                    $(this).next('div').slideDown(300);
+                    $(this).children('.icon').toggleClass('iconshow')
+                }else {
+                    $(this).next('div').slideUp(300);
+                    $(this).children('.icon').removeClass('iconshow');
+                }
+            })
+        })
+    </script>
 </head>
 <body>
+<div class="wrapper">
+    <div class="header">
+        <div id="circle">
+
+        </div>
+    </div>
+    <div class="man">
+        <div class="leftcontain">
+            <ul class="outer">
+                <li><a href="javascript:void(0)">个人信息</a></li>
+                <li><a href="javascript:void(0)">转专业</a></li>
+                <li><a href="javascript:void(0)">课表</a></li>
+                <li>
+                    <a href="javascript:void(0)">学生选课<i class="icon"></i></a>
+
+                    <div class="nav-item">
+                        <ul class="inner1">
+                            <li><a href="javascript:void(0)">选课</a></li>
+                            <li><a href="javascript:void(0)">重学选课</a></li>
+                            <li><a href="javascript:void(0)">实验选课</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="javascript:void(0)">查询<i class="icon"></i></a>
+                    <div class="nav-item">
+                        <ul class="inner2">
+                            <li><a href="javascript:void(0)">考试安排</a></li>
+                            <li><a href="javascript:void(0)">成绩查询</a></li>
+                            <li><a href="javascript:void(0)">学分绩查询</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="javascript:void(0)">课程安排</a></li>
+                <li><a href="javascript:void(0)">系统设置</a></li>
+            </ul>
+        </div>
+
+        <a class="btn"></a>
+        <div class="rightcontain">
+
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+</div>
 
 </body>
 </html>
